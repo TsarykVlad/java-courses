@@ -1,11 +1,23 @@
 public class Calculator {
-    private int result;
-    public void add(int ... params) {
-        for (Integer param : params) {
+    private double result;
+    public void add(double ... params) {
+        for (Double param : params) {
             this.result += param;
         }
     }
-    public int getResult() {
+    public void mult(double ... params) {
+        this.result = 1;
+        for (Double param : params) {
+            this.result *= param;
+        }
+    }
+    public void sub(double ... params) {
+        this.result = params[0]-params[1];
+    }
+    public void div(double ... params) {
+        this.result = params[0]/params[1];
+    }
+    public double getResult() {
         return this.result;
     }
     public void cleanResult() {
